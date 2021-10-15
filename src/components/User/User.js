@@ -20,9 +20,9 @@ export default function User({ list }){
             {user && <h3>Address</h3>}
             {user && <p>{user.location.street.number} {user.location.street.name}, {user.location.city}, {user.location.country}, {user.location.postcode} </p>}
             {user && <h2>Login Info </h2>}
-            {user && <p><h5>uuid</h5> {user.login.uuid}</p>}
-            {user && <p><h5>username</h5>{user.login.username}</p>}
-            {user && <p><h5>password</h5> {user.login.password}</p>}
+            {user && <p><h4>uuid</h4> {user.login.uuid}</p>}
+            {user && <p><h4>username</h4>{user.login.username}</p>}
+            {user && <p><h4>password</h4> {user.login.password}</p>}
 
             </div>
         </div>

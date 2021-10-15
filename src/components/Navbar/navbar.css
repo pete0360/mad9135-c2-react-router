@@ -1,8 +1,16 @@
 a.active {
-  color: red;
+  color: #bb0a21;
 }
 a {
-  color: white;
+  color: #252627;
   text-decoration: none;
   margin-right: 1rem;
+}
+
+.nav-item {
+  margin: 0 1rem;
+}
+
+.navbar {
+  margin-top: 2rem;
 }

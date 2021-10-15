@@ -1,0 +1,16 @@
+.home {
+  border-radius: 40px;
+  background: #d3d4d9;
+  box-shadow: 36px -36px 71px #b8b8b8, -36px 36px 71px #ffffff;
+  width: 50%;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.home > h1 {
+  color: #4b88a2;
+}
+
+.home > p {
+  color: #252627;
+}

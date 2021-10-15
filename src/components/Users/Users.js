@@ -37,17 +37,19 @@ export default function Users({ list }){
                 <div className = "cardList parent">
                     {list.length === 0 && <p>Loading...</p>}
                     {list.map((item, index) => (
-                    <div key = {item.name.first }  className = {`div${index + 1}`} >
+                    <div key = {item.name.first }  className = {`div${index + 1} center-page`} >
                         
-                        <Card style={{ width: '18rem' }}
+                        <Card className style={{ width: '18rem' }}
                         >
                             <Card.Img className = "userImage" variant="top" src={item.picture.large} />
-                            <Card.Header>{item.name.first} {item.name.last} </Card.Header>
+                            <div className = "cardContainer">
+                            <h2>{item.name.first} {item.name.last} </h2>
                             <Card.Body>
                                 <Card.Text>{item.email}</Card.Text>
                                 <Card.Text>{item.cell}</Card.Text>
                                 <NavLink className = "card-Link" to={`/users/${index + 1}`}>More info</NavLink>
                             </Card.Body>
+                            </div>
                         </Card>
                     </div>
                     ))}

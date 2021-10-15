@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Route, NavLink } from 'react-router-dom'
 import Table from 'react-bootstrap/Table'
+import "./address.css"
 
 export default function Address(){
     const [list, setList] = useState([]);
@@ -23,15 +24,17 @@ export default function Address(){
       }
 
       return (
-        <>
+        <div className = 'address-main'> 
+        <div className = "container">
         {list.length === 0 && <p>Loading...</p>}
-        <Table striped bordered hover variant="dark">
-        <thead>
-          <tr>
+        
+        <thead >
+          <tr className = "titles">
             <th>#</th>
             <th>Last Name</th>
             <th>First Name</th>
             <th>Address</th>
+            <th>Details</th>
           </tr>
 
         </thead>
@@ -42,10 +45,12 @@ export default function Address(){
                 <th>{item.name.last}</th>
                 <th>{item.name.first}</th>
                 <th>{item.location.street.number} {item.location.street.name}, {item.location.city}, {item.location.state} </th>
+                <th><NavLink className = "card-Link" to={`/users/${index + 1}`}>Details about {item.name.first}</NavLink></th>
             </tr>
           ))}
         </tbody>
-      </Table>
-      </>
+      
+      </div>
+      </div>
       )
 }

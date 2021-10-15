@@ -1,0 +1,18 @@
+.container {
+  color: #252627;
+  border: 5px solid #252627;
+  width: 90%;
+}
+.address-main {
+  display: flex;
+  justify-content: center;
+}
+
+.titles {
+  border-bottom: 5px solid #252627;
+  margin-bottom: 1rem;
+}
+
+th {
+  border-bottom: 1px solid #252627;
+}
