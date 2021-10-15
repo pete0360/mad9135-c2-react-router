@@ -1,48 +1,30 @@
 import { useParams } from 'react-router-dom';
-import { useEffect, useState } from 'react';
-import PropTypes from 'prop-types';
-import Card from 'react-bootstrap/Card'
-import Image from 'react-bootstrap/Image'
+import "./user.css"
 
-// import Card from 'react-bootstrap/Card'
-// import Image from 'react-bootstrap/Image'
 
-export default function User ({ list }) {
-    // const [user, setUser] = useState(null);
-    const { id } = useParams();
+export default function User({ list }){
 
-    // useEffect(() => {
-    //     setUser(findUser(id));
-    //   }, [findUser, id])
+
+    const { id } = useParams()
+
 
     let user = list.find((item, index) => parseInt(id) === index + 1)
 
-    return (
-        <>
-        <div key = {user.name.first }  className = "detail-card">
-                        <Image src={user.picture.large} />
-                        <Card style={{ width: '18rem' }}
-                        >
-                            <Card.Header>{user.name.first} {user.name.last} </Card.Header>
-                            <Card.Body>
-                                <Card.Text>{user.location.street.number} {user.location.street.name}</Card.Text>
-                                <Card.Text>{user.location.city},</Card.Text>
-                                <Card.Text>{user.location.state},</Card.Text>
-                                <Card.Text>{user.location.country},</Card.Text>
-                                <Card.Text>{user.location.postcode}</Card.Text>
-                                <Card.Text>{user.login.uuid}</Card.Text>
-                                <Card.Text>{user.login.username}</Card.Text>
-                                <Card.Text>{user.login.password}</Card.Text>
+    return(
+        <div className = "detail-card">
+            <div className = "img-container">
+            {user && <img className = "detail-image" src = {user.picture.large} alt = "user" />}    
+            </div>
+            <div className = "detail-info">
+            {user && <h1>{user.name.first} {user.name.last}</h1>}
+            {user && <h3>Address</h3>}
+            {user && <p>{user.location.street.number} {user.location.street.name}, {user.location.city}, {user.location.country}, {user.location.postcode} </p>}
+            {user && <h2>Login Info </h2>}
+            {user && <p><h5>uuid</h5> {user.login.uuid}</p>}
+            {user && <p><h5>username</h5>{user.login.username}</p>}
+            {user && <p><h5>password</h5> {user.login.password}</p>}
 
-
-
-                            </Card.Body>
-                        </Card>
-                    </div>
-        </>
+            </div>
+        </div>
     )
 }
-
-// User.propTypes = {
-//     findUser: PropTypes.func.isRequired,
-// }
