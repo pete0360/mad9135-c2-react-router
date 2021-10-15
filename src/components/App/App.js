@@ -11,7 +11,7 @@ function App() {
     <header>
       <Navbar />
     </header>
-    <main>
+    <main >
       <Switch>
         <Route path="/users">
         <Users />
@@ -24,9 +24,11 @@ function App() {
         </Route>
         <Route 
         path="/"
-        exact>
-        <Home />
-        </Route>
+        exact
+        render={() => {
+            return <Home />;
+          }}
+        />
         <Redirect to = "/404" />
       </Switch>
     </main>
