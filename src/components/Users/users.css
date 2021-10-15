@@ -1,0 +1,24 @@
+.users {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.cardList {
+  flex-basis: 50%;
+
+  flex-grow: 0;
+  flex-shrink: 0;
+  font-size: 1.25rem;
+  background-color: white;
+  margin: 1rem 0;
+  color: black;
+  padding: 0.5rem;
+}
+.userDetails {
+  flex-basis: 50%;
+
+  flex-grow: 0;
+  flex-shrink: 0;
+  padding: 0 1rem;
+}

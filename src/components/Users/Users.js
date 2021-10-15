@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react'
 import { Route, NavLink } from 'react-router-dom'
 import Card from 'react-bootstrap/Card'
+import Image from 'react-bootstrap/Image'
+import './users.css'
 
 
 export default function Users(){
@@ -23,35 +25,29 @@ export default function Users(){
 
 
       return (
-    //     <div className="planets">
-    //   {list.length === 0 && <p>Loading...</p>}
-    //   <div className="planet-list">
-    //     {list.map((item, index) => (
-    //       <p key={item.name.first}>
-    //         <NavLink to={`/Users/${index + 1}`}>{item.name.last}</NavLink>
-            
-    //       </p>
-    //     ))}
-    //   </div>
-    // </div>
-    <>
+
+    
+    <div className = "Users">
     {list.length === 0 && <p>Loading...</p>}
-     {list.map((item, index) => (
-    <div key = {item.name.first}>
+    {list.map((item, index) => (
+    <div key = {item.name.first} className = "cardList">
+        <Image src={item.picture.medium} />
         <Card 
         style={{ width: '18rem'}}>
-            <Card.Img variant="top" src={item.picture.large} />
-            <Card.Header>{item.name.first} {item.name.last}</Card.Header>
+            <Card.Header>{item.name.first} {item.name.last} </Card.Header>
             <Card.Body>
-                <Card.Text>
-                    Some quick example text to build on the card title and make up the bulk of
-                    the card's content.
-                </Card.Text>
+                <Card.Text>{item.email}</Card.Text>
+                <Card.Text>{item.cell}</Card.Text>
                 <Card.Link href = "#">More Info</Card.Link>
             </Card.Body>
         </Card>
     </div>
     ))}
-    </> 
+    <div className = "userDetails">
+
+    </div>
+    
+    </div>
+    
       )
 }
