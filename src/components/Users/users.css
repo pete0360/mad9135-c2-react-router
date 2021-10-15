@@ -22,3 +22,7 @@
   flex-shrink: 0;
   padding: 0 1rem;
 }
+
+a.card-Link {
+  color: black;
+}

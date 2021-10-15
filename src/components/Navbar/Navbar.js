@@ -4,11 +4,14 @@ import './navbar.css';
 export default function Navbar(props) {
   return (
     <div className="navbar">
-      <NavLink activeClassName="active" to="/" exact>
+      <NavLink activeClassName="active" className = "nav-item" to="/" exact>
         Home
       </NavLink>
-      <NavLink activeClassName="active" to="/users">
+      <NavLink activeClassName="active" className = "nav-item" to="/users">
         User List
+      </NavLink>
+      <NavLink activeClassName="active" className = "nav-item" to="/address">
+        Address List
       </NavLink>
     </div>
   );

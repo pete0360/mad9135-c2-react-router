@@ -3,6 +3,7 @@ import Navbar from "../Navbar/Navbar"
 import Users from "../Users/Users"
 import Not from "../Not/Not"
 import Home from "../Home/Home"
+import Address from "../Address/Address"
 import { Switch, Route, Redirect } from 'react-router-dom'
 function App() {
   return(
@@ -14,6 +15,9 @@ function App() {
       <Switch>
         <Route path="/users">
         <Users />
+        </Route>
+        <Route path="/address">
+        <Address />
         </Route>
         <Route path="/404">
         <Not />
